@@ -1,0 +1,28 @@
+/* Popup style */
+.popup-box {
+    width: 190px;
+    height: 111px;
+    margin: auto;
+}
+
+.box {
+    position: relative;
+    background: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    border: 1px solid #999;
+    overflow: auto;
+}
+
+.close-icon {
+    content: 'x';
+    cursor: pointer;
+    font-size: 20px;
+    position: relative;
+    padding-left: 7em;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+}

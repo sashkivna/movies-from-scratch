@@ -16,7 +16,25 @@ module.exports = {
     },
 
     module: {
-        rules: [{ test: /\.(ts|js)x?$/, loader: 'babel-loader', exclude: /node_modules/ }],
+        rules: [
+            {
+                test: /\.(ts|js)x?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            },
+            {test: /\.ts$/, use: 'ts-loader'},
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
+            },],
     },
 
     plugins: [
