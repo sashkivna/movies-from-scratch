@@ -2,11 +2,12 @@ import React from "react";
 
 const Popup = (props: any) => {
     return (
-        <div className="popup-box">
-            <div className="box">
-                <span className="close-icon" onClick={props.handleClose}>x</span>
-                <div className="list">{props.content}</div>
-            </div>
+        <div className = {`popup ${props.mode === 'full' ? 'big' : 'dynamic'}`}>
+            <span className="close-icon" onClick={(e) => {
+                e.stopPropagation();
+                props.handleClose();
+            }}>x</span>
+            <div className="content">{props.content}</div>
         </div>
     );
 };

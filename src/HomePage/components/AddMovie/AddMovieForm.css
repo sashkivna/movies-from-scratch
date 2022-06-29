@@ -1,0 +1,89 @@
+.add-movie {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.add-movie-form-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-movie-form-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-movie-form-row .add-movie-form-column:first-child {
+    width: 60%;
+}
+
+.add-movie-form-row .add-movie-form-column {
+    width: 30%;
+}
+
+.add-movie-form-field {
+    width: 100%;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-movie-form-field label {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+
+    letter-spacing: 0.888889px;
+    text-transadd-movie-form: uppercase;
+
+    color: #F65261;
+
+    mix-blend-mode: normal;
+    opacity: 0.8;
+    padding-bottom: 13px;
+}
+
+.add-movie-form-field + .add-movie-form-field {
+    padding-top: 30px;
+}
+
+.add-movie-form-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.add-movie-form-control {
+    padding: 16px 20px;
+    border: 2px solid #F65261;
+    border-radius: 4px;
+    color: #F65261;
+}
+
+.add-movie-form-control.filled {
+    background: #F65261;
+    color: white;
+}
+
+.add-movie-form-control + .add-movie-form-control {
+    margin-left:  13px;
+}
+
+.add-movie-form-row-overview {
+    width: 100%;
+    height: 100px;
+    margin-top: 30px;
+}
+
+.add-movie-title {
+    font-size: 24px;
+    color: white;
+}
