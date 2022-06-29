@@ -1,0 +1,39 @@
+.first-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-control {
+    display: flex;
+    justify-content: space-around;
+}
+
+.search-input {
+    height: 42px;
+    width: 713px;
+    left: 178px;
+    top: 242px;
+    border-radius: 4px
+}
+
+.search-button {
+    height: 42px;
+    width: 233px;
+    left: 905px;
+    top: 242px;
+    border-radius: 4px
+}
+
+.search {
+    height: 30vh;
+    display: grid;
+}
+
+.label {
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 49px;
+    letter-spacing: 1px;
+    margin-left: 2em;
+}

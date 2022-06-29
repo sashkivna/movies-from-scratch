@@ -1,0 +1,13 @@
+.card {
+    box-sizing: border-box;
+    margin: 1rem .25em;
+    border: 1px solid black;
+    width: 30%;
+    height:350px;
+}
+
+.modify-btn {
+    border: none;
+    background: white;
+    cursor: pointer;
+}
