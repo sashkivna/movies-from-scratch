@@ -1,41 +1,32 @@
-import React from 'react';
-import Popup from "../Popup/Popup";
+import React, {useState} from 'react';
 import './MovieCard.css'
 import '../Popup/Popup.css'
-import {useTogglerState} from "./Hooks";
+import Popup from "../Popup/Popup";
+import {useModalContext} from "../../../modal.context";
 
-interface MovieCardInterface {
+export interface MovieCardInterface {
     title: string,
-    popularity: number
+    popularity: number,
+    index: number,
 }
 
 export function MovieCard(props: MovieCardInterface) {
-    const [isOpen, toggleIsOpen] = useTogglerState(false);
-    const [isEdited, toggleIsEdited] = useTogglerState(false);
-    const [isDeleted, toggleIsDeleted] = useTogglerState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
-    const togglePopup = () => {
-        toggleIsOpen();
-    }
+    const contextData = useModalContext();
 
-    const toggleEdit = () => {
-        toggleIsEdited();
-    }
-
-    const toggleDelete = () => {
-        toggleIsDeleted();
-    }
-
-    return (<div className='card' onClick={togglePopup}>
+    return (<div className='card' onClick={() => setIsOpen(!isOpen)}>
         <div>{props.title}</div>
 
         <div>{props.popularity}</div>
+
         {isOpen && <Popup
+            mode={'small'}
             content={<>
-                <button className="modify-btn" onClick={toggleEdit}>Edit</button> {isEdited}
-                <button className="modify-btn" onClick={toggleDelete}>Delete</button> {isDeleted}
+                <button className="modify-btn" onClick={() => contextData.openEditModal(props.index)}>Edit</button>
+                <button className="modify-btn" onClick={() => contextData.openDeleteModal(props.index)}>Delete</button>
             </>}
-            handleClose={togglePopup}
+            handleClose={contextData.closeModal}
         />}
     </div>)
 }

@@ -1,4 +1,6 @@
-export type Movies = Array<Movie>
+import {InnerState} from "./HomePage/components/AddMovie/AddMovieForm";
+
+export type Movies = Array<Movie | InnerState>
 
 export type Movie = {
     "original_title": string,

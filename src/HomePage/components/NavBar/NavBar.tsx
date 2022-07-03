@@ -1,8 +1,9 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import './NavBar.css'
+import {CATEGORIES} from "../../../App";
 
-export const NavBar: FunctionComponent<{categories: Array<string>}> = ({ categories }) => {
+export const NavBar = () => {
     return <div>
-        {categories.map((category: string) => <span key={category} className='movie-category'>{category}</span>)}
+        {CATEGORIES.map((category: string) => <span key={category} className='movie-category'>{category}</span>)}
         </div>;
 }

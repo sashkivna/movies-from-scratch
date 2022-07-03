@@ -1,0 +1,23 @@
+.delete-movie-title {
+    text-align: center;
+    color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 49px;
+    /* identical to box height */
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.delete-movie-form-row {
+    color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+}
