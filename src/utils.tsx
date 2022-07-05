@@ -1,0 +1,1 @@
+export const filterOutPosition = (input: any[], skipIndex: number) => input.filter((_: any, index: number) => skipIndex !== index);

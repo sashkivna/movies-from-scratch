@@ -10,7 +10,8 @@ import {EditMovieForm} from "./components/EditMovie/EditMovieForm";
 import {DeleteMovieForm} from "./components/DeleteMovie/DeleteMovieForm";
 import {AddMovieForm} from "./components/AddMovie/AddMovieForm";
 import {useMoviesContext} from "../movies.context";
-import {mockedMovies} from "../Mocks";
+import {mockedMovies, Movie} from "../Mocks";
+import {MovieDetails} from "./components/MovieDetails/MovieDetails";
 
 const appStaticData = {
     title: 'Find your movie',
@@ -18,27 +19,36 @@ const appStaticData = {
 }
 
 export function HomePage() {
-    const {movies, setMovies} = useMoviesContext();
+    const {moviesList, setMovies} = useMoviesContext();
+    const [activeCard, setActiveCard] = React.useState<Movie | null>(null)
+
     useEffect(() =>{
         setMovies(mockedMovies);
     }, [])
 
     const contextData = useModalContext();
 
+    function toggleSearch() {
+        return () => setActiveCard(null)
+    }
+
     return(
         <>
-            <Search title={appStaticData.title} logo={appStaticData.logo}/>
+            {activeCard ? <MovieDetails
+                movie={activeCard}
+                onSearchToggle={toggleSearch}
+            /> : <Search title={appStaticData.title} logo={appStaticData.logo}/>}
             <Header/>
             <Scroll>
-                <MoviesList movies={movies}/>
+                <MoviesList onCardClick={setActiveCard} movies={moviesList}/>
             </Scroll>
             {contextData.index && contextData.operation === 'edit' && <Popup
                 mode={'full'}
                 content={<EditMovieForm
-                    title={movies[contextData.index].original_title}
+                    original_title={moviesList[contextData.index].original_title}
                     data={'02-03-2022'}
                     genre={'comedy'}
-                    popularity={movies[contextData.index].popularity}
+                    popularity={moviesList[contextData.index].popularity}
                     runtime={68}
                     url={'http://localhost'}/>}
                 handleClose={contextData.closeModal}
