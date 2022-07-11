@@ -3,11 +3,13 @@ import './MovieCard.css'
 import '../Popup/Popup.css'
 import Popup from "../Popup/Popup";
 import {useModalContext} from "../../../modal.context";
+import Image from '../../../assets/more-actions.svg'
 
 export interface MovieCardInterface {
     title: string,
     popularity: number,
     index: number,
+    onCardClick: () => void
 }
 
 export function MovieCard(props: MovieCardInterface) {
@@ -15,10 +17,14 @@ export function MovieCard(props: MovieCardInterface) {
 
     const contextData = useModalContext();
 
-    return (<div className='card' onClick={() => setIsOpen(!isOpen)}>
+    return (<div className='card' onClick={props.onCardClick}>
         <div>{props.title}</div>
 
         <div>{props.popularity}</div>
+        <Image className='more-actions-icon' width={30} height={30} onClick={(e) => {
+            e.stopPropagation();
+            setIsOpen((isOpen: boolean) => !isOpen)
+        }}/>
 
         {isOpen && <Popup
             mode={'small'}

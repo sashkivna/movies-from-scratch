@@ -1,19 +1,19 @@
 import React, {FC, useState, useContext, Dispatch, SetStateAction} from "react";
 import {mockedMovies, Movie, Movies} from "./Mocks";
 import {InnerState} from "./HomePage/components/AddMovie/AddMovieForm";
+import {filterOutPosition} from "./utils";
 
 export const MoviesContext = React.createContext<{
-    movies: Movies,
+    moviesList: Movies,
     setMovies: Dispatch<SetStateAction<Movies>>
-}>({movies: mockedMovies, setMovies: () => {}});
+}>({moviesList: mockedMovies, setMovies: () => {}});
 
 const MoviesProvider: FC = ({children}) => {
-    const [movies, setMovies] = useState<Movies>([]);
+    const [moviesList, setMoviesList] = useState<Movies>([]);
 
-    return <MoviesContext.Provider value={{movies: movies, setMovies: (...args: any[]) => {
-        debugger;
+    return <MoviesContext.Provider value={{moviesList: moviesList, setMovies: (...args: any[]) => {
         // @ts-ignore
-            setMovies(...args);
+            setMoviesList(...args);
     }
     }}> {children} </MoviesContext.Provider>
 }
@@ -22,33 +22,29 @@ const MoviesProvider: FC = ({children}) => {
 const useMoviesContext = () => {
     const moviesData = useContext(MoviesContext);
 
-    const {movies, setMovies} = moviesData;
+    const {moviesList, setMovies} = moviesData;
 
     const addMovie = (movie: InnerState) => {
-        debugger
         setMovies(movies => [...movies, movie])
     };
-    const deleteMovie = (index: number) => setMovies((movies) => movies.filter((_movie: any, movieIndex: number) => movieIndex !== index));
-    const editMovie = (movie: Movie, editedIndex: number) => {
-        const nextMovies = [...movies];
-        nextMovies[editedIndex] = movie;
-        setMovies(nextMovies);
+    const deleteMovie = (index: number) => setMovies((moviesList) => filterOutPosition(moviesList, index));
+    const editMovie = (movie: Movie | InnerState, editedIndex: number) => {
+        const updatedMovies = [...moviesList];
+        updatedMovies[editedIndex] = movie;
+        setMovies(() => updatedMovies);
     };
-    const searchMovies = (searchField: string) => {
-        setMovies(movies => searchField ? movies.filter(
-            movie => {
-                return (
-                    movie
-                        .original_title
-                        .toLowerCase()
-                        .includes(searchField.toLowerCase())
-                );
-            }
-        ) : movies)
+    const searchMovies = (searchValue: string) => {
+        if(!searchValue) return;
+        setMovies(movies => movies.filter(
+            movie => movie
+                .original_title
+                .toLowerCase()
+                .includes(searchValue.toLowerCase())
+        ));
     };
 
     return {
-        movies,
+        moviesList: moviesList,
         setMovies,
         addMovie,
         deleteMovie,

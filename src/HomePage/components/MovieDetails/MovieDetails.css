@@ -1,0 +1,32 @@
+.movie-details {
+    background-color: #232323;
+    color: #E4E4E4;
+}
+.movie-details-search-icon {
+    transform: rotate(90deg);
+    fill: red;
+}
+
+.movie-details-content {
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+}
+
+.movie-details-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.movie-details-img {
+    width: 40%;
+}
+
+.movie-details-description {
+    width: 50%;
+}
+
+.movie-details-field + .movie-details-field {
+    padding-top: 30px;
+}

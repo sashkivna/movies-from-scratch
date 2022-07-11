@@ -26,12 +26,12 @@ export const mockedMovies: Movies = [
     },
     {
         "original_title": "Wrath of Man",
-        "overview": "A cold and mysterious new security guard for a Los Angeles cash truck company surprises his co-workers when he unleashes precision skills during a heist. The crew is left wondering who he is and where he came from. Soon, the marksman's ultimate motive becomes clear as he takes dramatic and irrevocable steps to settle a score.",
+        "overview": "A cold and mysterious new security guard for a Los Angeles cash truck company surprises his co-workers when he unleashes precision skills during a heist. The crew is left wondering who he is and where he came from. Soon, the marksman'assets ultimate motive becomes clear as he takes dramatic and irrevocable steps to settle a score.",
         "popularity": 3456.24,
     },
     {
         "original_title": "Mortal Kombat",
-        "overview": "Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung's best warrior, Sub-Zero, seeks out and trains with Earth's greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe.",
+        "overview": "Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung'assets best warrior, Sub-Zero, seeks out and trains with Earth'assets greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe.",
         "popularity": 1721.224,
     },
     {
@@ -40,7 +40,7 @@ export const mockedMovies: Movies = [
         "popularity": 1406.875,
     },
     {
-        "original_title": "Tom Clancy's Without Remorse",
+        "original_title": "Tom Clancy'assets Without Remorse",
         "overview": "An elite Navy SEAL uncovers an international conspiracy while seeking justice for the murder of his pregnant wife.",
         "popularity": 1449.581,
     },
@@ -56,12 +56,12 @@ export const mockedMovies: Movies = [
     },
     {
         "original_title": "The Virtuoso",
-        "overview": "A lonesome stranger with nerves of steel must track down and kill a rogue hitman to satisfy an outstanding debt. But the only information he's been given is a time and location where to find his quarry. No name. No description. Nothing.",
+        "overview": "A lonesome stranger with nerves of steel must track down and kill a rogue hitman to satisfy an outstanding debt. But the only information he'assets been given is a time and location where to find his quarry. No name. No description. Nothing.",
         "popularity": 1257.853,
     },
     {
         "original_title": "Nobody",
-        "overview": "Hutch Mansell, a suburban dad, overlooked husband, nothing neighbor \u2014 a \"nobody.\" When two thieves break into his home one night, Hutch's unknown long-simmering rage is ignited and propels him on a brutal path that will uncover dark secrets he fought to leave behind.",
+        "overview": "Hutch Mansell, a suburban dad, overlooked husband, nothing neighbor \u2014 a \"nobody.\" When two thieves break into his home one night, Hutch'assets unknown long-simmering rage is ignited and propels him on a brutal path that will uncover dark secrets he fought to leave behind.",
         "popularity": 1069.612,
     },
     {
@@ -81,7 +81,7 @@ export const mockedMovies: Movies = [
     },
     {
         "original_title": "\u5287\u5834\u7248\u300c\u9b3c\u6ec5\u306e\u5203\u300d\u7121\u9650\u5217\u8eca\u7de8",
-        "overview": "Tanjir\u014d Kamado, joined with Inosuke Hashibira, a boy raised by boars who wears a boar's head, and Zenitsu Agatsuma, a scared boy who reveals his true power when he sleeps, boards the Infinity Train on a new mission with the Fire Hashira, Ky\u014djur\u014d Rengoku, to defeat a demon who has been tormenting the people and killing the demon slayers who oppose it!",
+        "overview": "Tanjir\u014d Kamado, joined with Inosuke Hashibira, a boy raised by boars who wears a boar'assets head, and Zenitsu Agatsuma, a scared boy who reveals his true power when he sleeps, boards the Infinity Train on a new mission with the Fire Hashira, Ky\u014djur\u014d Rengoku, to defeat a demon who has been tormenting the people and killing the demon slayers who oppose it!",
         "popularity": 1049.135,
     },
     {

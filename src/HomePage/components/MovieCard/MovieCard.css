@@ -11,3 +11,10 @@
     background: white;
     cursor: pointer;
 }
+
+.more-actions-icon {
+    transform: rotate(90deg);
+    position: relative;
+    left: 80%;
+    top: -8%;
+}

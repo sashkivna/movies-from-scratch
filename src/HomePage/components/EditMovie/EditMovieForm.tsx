@@ -1,8 +1,10 @@
 import React from "react";
 import './EditMovieForm.css'
+import {useMoviesContext} from "../../../movies.context";
+import {useModalContext} from "../../../modal.context";
 
  type MockedEditData = {
-     title: string,
+     original_title: string,
      data: string,
      url: string,
      popularity: number,
@@ -12,7 +14,7 @@ import './EditMovieForm.css'
 
 export function EditMovieForm(props: MockedEditData) {
     const [state, setState] = React.useState({
-        title: props.title,
+        original_title: props.original_title,
         data: props.data,
         url: props.url,
         popularity: props.popularity,
@@ -25,6 +27,10 @@ export function EditMovieForm(props: MockedEditData) {
         [field]: e.target.value
     }))
 
+
+    const moviesData = useMoviesContext();
+    const contextData = useModalContext();
+
     return (
         <form className="edit-movie">
             <span className='edit-movie-title'>EDIT MOVIE</span>
@@ -36,9 +42,9 @@ export function EditMovieForm(props: MockedEditData) {
                         <input
                             id='movie-title'
                             type="text"
-                            name="title"
-                            value={state.title}
-                            onChange={setField('title')}
+                            name="original_title"
+                            value={state.original_title}
+                            onChange={setField('original_title')}
                         />
                     </div>
                     <div className='edit-movie-form-field'>
@@ -101,8 +107,12 @@ export function EditMovieForm(props: MockedEditData) {
                 <textarea name="overview" className='edit-movie-form-row-overview' placeholder='Movie description'/>
             </div>
             <div className="edit-movie-form-controls">
-                <button type="reset" className="edit-movie-form-control">Reset</button>
-                <button type="submit" className="edit-movie-form-control filled">submit</button>
+                <button type="reset" className="edit-movie-form-control" onClick={() => setState(props)}>Reset</button>
+                <button type="submit" className="edit-movie-form-control filled" onClick={(e) => {
+                    e.preventDefault();
+                    moviesData.editMovie(state as any, contextData.index);
+                    contextData.closeModal();
+                }}>submit</button>
             </div>
         </form>
     )

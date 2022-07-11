@@ -4,12 +4,15 @@ import './MoviesList.css'
 import {Movie} from "../../../Mocks";
 
 export interface MoviesListInterface {
-    movies: any}
+    movies: any,
+    onCardClick: (movie: any) => void
+}
 
-export function MoviesList({ movies } : MoviesListInterface) {
-    console.log('movies', movies)
+export function MoviesList({ movies, onCardClick } : MoviesListInterface) {
+
     return (<div className='cards'>
         {movies?.map( (movie: Movie, index: number) => <MovieCard
+            onCardClick={() => onCardClick(movie)}
             key={movie.original_title}
             title={movie.original_title}
             index={index}
